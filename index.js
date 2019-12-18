@@ -1,4 +1,3 @@
-const fs = require('fs')
 const player = require('play-sound')(opts = {})
 
 function playOurSong () {
@@ -6,8 +5,6 @@ function playOurSong () {
     if (err) console.error(err);
   })
 }
-
-
 
 playOurSong()
 
