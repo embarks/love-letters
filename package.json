@@ -6,6 +6,10 @@
   "repository": "git@github.com:embarks/love-letters.git",
   "author": "Emily Bartman <frank@emwaves.org>",
   "license": "UNLICENSED",
+  "pkg": {
+    "scripts": "index.js",
+    "assets": "the_space_of_your_mind.mp3"
+  },
   "dependencies": {
     "baudio": "^2.1.2",
     "chalk": "^3.0.0",
