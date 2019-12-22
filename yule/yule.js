@@ -1,8 +1,6 @@
 const open = require('open')
 const chalk = require('chalk')
 
-const SONG_LENGTH_MS =  20000 //(1 * 60 * 1000) + (42 * 1000)
-
 // padding must be equal on either side of the tree
 const xmastree = [
   `                                     `,
@@ -167,8 +165,9 @@ function timeLeft(endtime){
 };
 
 
-function openXmasCard () {
-  const timer = setInterval(() => {
+async function openXmasCard () {
+  await open('./hark.mp3')
+  setInterval(() => {
     const cols = process.stdout.columns
     drawTree()
     process.stdout.write('\n')
@@ -181,14 +180,8 @@ function openXmasCard () {
     process.stdout.write(
       center(cols, `${'days'.padEnd(7, ' ')}  ${'hours'.padEnd(7, ' ')}  ${'minutes'.padEnd(7, ' ')}  seconds`)
     )
-    process.stdout.write('\n\n')
-    process.stdout.write(chalk`{black ${'(^C to exit)'.padStart(cols)}}`)
     process.stdout.write('\n')
   }, 500)
-
-  // setTimeout(function () { 
-  //   clearInterval(timer)
-  // }, )
 }
 
 openXmasCard()
