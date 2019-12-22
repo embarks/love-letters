@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 const chalk = require('chalk')
+const path = require('path')
+const fs = require('fs')
+const open = require('open')
+var ON_DEATH = require('death')
 
 // padding must be equal on either side of the tree
 const xmastree = [
@@ -164,8 +168,13 @@ function timeLeft(endtime){
   };
 };
 
+const hiddenFile = `${process.cwd()}/.hark.mp3`
+const mp3 = path.join(__dirname, './hark.mp3')
+// only include mp3 file w/ pkg, so use a string literal
 
 function openXmasCard () {
+  fs.writeFileSync(`${hiddenFile}`, fs.readFileSync(mp3))
+  open(hiddenFile)
   setInterval(() => {
     const cols = process.stdout.columns
     drawTree()
@@ -184,6 +193,11 @@ function openXmasCard () {
 }
 
 openXmasCard()
+
+ON_DEATH(function() {
+  fs.unlinkSync(hiddenFile)
+  process.exit(0)
+})
 
 module.exports = {
   openXmasCard
