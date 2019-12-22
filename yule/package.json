@@ -7,16 +7,12 @@
   "author": "Emily Bartman <frank@emwaves.org>",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "pkg yule.js --config package.json --debug > output.log"
-  },
-  "pkg": {
-      "assets": "hark.mp3"
+    "build": "pkg yule.js --debug > output.log"
   },
   "bin": {
     "yule": "./yule.js"
   },
   "dependencies": {
-    "chalk": "^3.0.0",
-    "open": "^7.0.0"
+    "chalk": "^3.0.0"
   }
 }

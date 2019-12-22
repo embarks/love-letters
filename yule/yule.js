@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const open = require('open')
 const chalk = require('chalk')
 
 // padding must be equal on either side of the tree
@@ -166,8 +165,7 @@ function timeLeft(endtime){
 };
 
 
-async function openXmasCard () {
-  await open('./hark.mp3')
+function openXmasCard () {
   setInterval(() => {
     const cols = process.stdout.columns
     drawTree()
