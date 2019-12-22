@@ -6,8 +6,11 @@
   "repository": "git@github.com:embarks/love-letters.git",
   "author": "Emily Bartman <frank@emwaves.org>",
   "license": "UNLICENSED",
+  "scripts": {
+    "build": "pkg yule.js --config package.json --debug > output.log"
+  },
   "pkg": {
-    "assets": "hark.mp3"
+      "assets": "hark.mp3"
   },
   "bin": {
     "yule": "./yule.js"

@@ -1,2 +1,8 @@
 # love-letters
-puzzles for ahren
+
+## yule
+
+- on MacOS and Linux: 
+`$ ./yule-<macos | linux>`
+
+- on Windows: 
