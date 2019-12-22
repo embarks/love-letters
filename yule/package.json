@@ -1,0 +1,25 @@
+{
+  "name": "love-letters",
+  "version": "1.0.0",
+  "description": "malware for my favorite person",
+  "main": "index.js",
+  "repository": "git@github.com:embarks/love-letters.git",
+  "author": "Emily Bartman <frank@emwaves.org>",
+  "license": "UNLICENSED",
+  "pkg": {
+    "scripts": [
+      "index.js"
+    ],
+    "assets": [
+      "hark.mp3"
+    ]
+  },
+  "bin": {
+    "yuletide": "./yule.js"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "inquirer": "^7.0.1",
+    "open": "^7.0.0"
+  }
+}
