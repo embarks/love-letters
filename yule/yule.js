@@ -103,10 +103,13 @@ const drawTree = (function () {
         process.stdout.write(`${lineWithFlakes.join('')}`)
       }
 
-      if (!(fi === 0 && ix === 0) && fi < ix) drawLine()
+      const isFirstDraw = fi === 0 && ix === 0
+      const isFirstCycle = fi < ix
+      if (!isFirstDraw && isFirstCycle) drawLine()
       else drawFlakes()
     })
     fi = fi + 1
+    if (fi >= xmastree.length * 2) fi = fi - xmastree.length 
   }
 
 
